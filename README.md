@@ -1,10 +1,18 @@
-# What is this?
+# The simple env library for Go
 
 A simple yet powerful library for handling all things environment variables.
 It makes retrieving and setting environment variables a breeze, with robust
-and sane error handlning.
+and sane error handlning. The library also allows for usage of `.env` files,
+with the internal use of [godotenv](https://github.com/joho/godotenv).
 
-# How does it work?
+# Installation
+
+The library can be installed as any other Go library:
+```bash
+go get github.com/mattismoel/env
+```
+
+# Usage
 
 The getters follow a very simple syntax, where a desired key and a fallback
 value is given. If the provided key is not to be found, the fallback value
@@ -39,5 +47,6 @@ env.SetInt("ENV_KEY", 100)              // ENV_KEY="100".
 env.SetFloat32("ENV_KEY", 15.25, 4)     // ENV_KEY="15.2500".
 env.SetBool("ENV_KEY", false)           // ENV_KEY="false".
 ```
+
 > Take note of the extra parameter `SetFloat32()`, where the last `perc`
 parameter specifies the amount of digits *after* the decimal point.
