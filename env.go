@@ -5,8 +5,6 @@ import (
 	"os"
 )
 
-type parseFunc[T any] func(s string) (T, error)
-
 func Require[T any](key string, parseFn parseFunc[T]) T {
 	strValue, ok := os.LookupEnv(key)
 	if !ok {
