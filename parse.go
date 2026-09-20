@@ -4,19 +4,19 @@ import "strconv"
 
 type parseFunc[T any] func(s string) (T, error)
 
-func StringParser(s string) parseFunc[string] {
+func StringParser() parseFunc[string] {
 	return func(s string) (string, error) {
 		return s, nil
 	}
 }
 
-func IntParser(s string) parseFunc[int] {
+func IntParser() parseFunc[int] {
 	return func(s string) (int, error) {
 		return strconv.Atoi(s)
 	}
 }
 
-func BoolParser(s string) parseFunc[bool] {
+func BoolParser() parseFunc[bool] {
 	return func(s string) (bool, error) {
 		return strconv.ParseBool(s)
 	}
